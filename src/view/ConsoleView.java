@@ -16,8 +16,7 @@ public class ConsoleView {
 	}
 
 	public void showQuit() {
-		
-		
+		output.println();		
 	}
 
 }
