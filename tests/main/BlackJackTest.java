@@ -25,6 +25,7 @@ public class BlackJackTest {
 		verify(view).showMenu();
 	}
 	
+	@Test
 	public void shouldShowMenuAndQuit() {
 		ConsoleView view = mock(ConsoleView.class);
 		sut = new BlackJack(view);

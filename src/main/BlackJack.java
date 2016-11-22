@@ -16,7 +16,8 @@ public class BlackJack {
 	}
 
 	void run() {
-		view.showMenu();		
+		view.showMenu();
+		view.showQuit();
 	}
 
 }
