@@ -16,7 +16,7 @@ public class ConsoleView {
 	}
 
 	public void showQuit() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

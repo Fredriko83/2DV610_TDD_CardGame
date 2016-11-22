@@ -26,5 +26,16 @@ public class ConsoleViewTest {
 		verify(printStream).println(ConsoleView.MENU);
 		
 	}
+	
+	@Test
+	public void shouldShowQuit() {
+		PrintStream printStream = Mockito.mock(PrintStream.class);
+		
+		sut = new ConsoleView(printStream);
+		sut.showQuit();
+		
+		verify(printStream).println();
+		
+	}
 
 }
