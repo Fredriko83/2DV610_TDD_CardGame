@@ -24,7 +24,7 @@ public class ConsoleViewTest {
 		sut = new ConsoleView(printStream);
 		sut.showMenu();
 		
-		verify(printStream).println();
+		verify(printStream).println("Welcome to BlackJack\n(p)lay or (q)uit");
 		
 	}
 
