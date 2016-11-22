@@ -4,12 +4,14 @@ import java.io.PrintStream;
 
 public class ConsoleView {
 
-	public ConsoleView(PrintStream printStream) {
-		// TODO Auto-generated constructor stub
+	private PrintStream output;
+
+	public ConsoleView(PrintStream output) {
+		this.output = output;
 	}
 
 	public void showMenu() {
-		// TODO Auto-generated method stub		
+		output.println();		
 	}
 
 }
