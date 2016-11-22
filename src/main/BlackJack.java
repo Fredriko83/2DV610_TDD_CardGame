@@ -1,10 +1,20 @@
 package main;
 
+import view.ConsoleView;
+
 public class BlackJack {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public BlackJack(ConsoleView view) {		
+	}
 
+	public static void main(String[] args) {
+		BlackJack BJ = new BlackJack(new ConsoleView());
+		BJ.run();
+	}
+
+	void run() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
