@@ -11,7 +11,7 @@ public class ConsoleView {
 	}
 
 	public void showMenu() {
-		output.println();		
+		output.println("Welcome to BlackJack\n(p)lay or (q)uit");		
 	}
 
 }
