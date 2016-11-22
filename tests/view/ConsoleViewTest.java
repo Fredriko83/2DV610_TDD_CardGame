@@ -1,6 +1,5 @@
 package view;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.io.PrintStream;
@@ -24,7 +23,7 @@ public class ConsoleViewTest {
 		sut = new ConsoleView(printStream);
 		sut.showMenu();
 		
-		verify(printStream).println("Welcome to BlackJack\n(p)lay or (q)uit");
+		verify(printStream).println(ConsoleView.MENU);
 		
 	}
 

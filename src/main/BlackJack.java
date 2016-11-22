@@ -11,13 +11,12 @@ public class BlackJack {
 	}
 
 	public static void main(String[] args) {
-		BlackJack BJ = new BlackJack(new ConsoleView());
+		BlackJack BJ = new BlackJack(new ConsoleView(System.out));
 		BJ.run();
 	}
 
 	void run() {
-		view.showMenu();
-		
+		view.showMenu();		
 	}
 
 }

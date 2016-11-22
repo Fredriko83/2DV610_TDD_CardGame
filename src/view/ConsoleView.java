@@ -4,6 +4,7 @@ import java.io.PrintStream;
 
 public class ConsoleView {
 
+	static final String MENU = "Welcome to BlackJack\n(p)lay or (q)uit";
 	private PrintStream output;
 
 	public ConsoleView(PrintStream output) {
@@ -11,7 +12,12 @@ public class ConsoleView {
 	}
 
 	public void showMenu() {
-		output.println("Welcome to BlackJack\n(p)lay or (q)uit");		
+		output.println(MENU);		
+	}
+
+	public void showQuit() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
