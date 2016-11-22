@@ -5,6 +5,8 @@ import java.io.PrintStream;
 public class ConsoleView {
 
 	static final String MENU = "Welcome to BlackJack\n(p)lay or (q)uit";
+	static final String QUIT = "Welcome back";
+	
 	private PrintStream output;
 
 	public ConsoleView(PrintStream output) {
@@ -16,7 +18,7 @@ public class ConsoleView {
 	}
 
 	public void showQuit() {
-		output.println();		
+		output.println(QUIT);		
 	}
 
 }

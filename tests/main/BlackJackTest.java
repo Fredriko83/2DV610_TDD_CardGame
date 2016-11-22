@@ -10,26 +10,24 @@ import main.BlackJack;
 
 public class BlackJackTest {
 	
-	private BlackJack sut;	
+	private BlackJack sut;
+	private ConsoleView view;	
 	
 	@Before
-	public void setUp() throws Exception {		
+	public void setUp() throws Exception {
+		view = mock(ConsoleView.class);
+		sut = new BlackJack(view);
+		sut.run();
 	}
 
 	@Test
 	public void shouldShowMenu() {
-		ConsoleView view = mock(ConsoleView.class);
-		sut = new BlackJack(view);
-		sut.run();
 		
 		verify(view).showMenu();
 	}
 	
 	@Test
 	public void shouldShowMenuAndQuit() {
-		ConsoleView view = mock(ConsoleView.class);
-		sut = new BlackJack(view);
-		sut.run();
 		
 		verify(view).showMenu();
 		verify(view).showQuit();
