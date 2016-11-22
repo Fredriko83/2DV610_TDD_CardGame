@@ -4,7 +4,10 @@ import view.ConsoleView;
 
 public class BlackJack {
 
-	public BlackJack(ConsoleView view) {		
+	private ConsoleView view;
+
+	public BlackJack(ConsoleView view) {
+		this.view = view;
 	}
 
 	public static void main(String[] args) {
@@ -13,7 +16,7 @@ public class BlackJack {
 	}
 
 	void run() {
-		// TODO Auto-generated method stub
+		view.showMenu();
 		
 	}
 
