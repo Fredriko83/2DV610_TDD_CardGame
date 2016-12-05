@@ -10,13 +10,11 @@ public class Card {
 		Hearts, Spades, Diamonds, Clubs
 	}
 
-	private int cardValue;
-
 	private Value value;
 	private Suite suite;
 
 	public Card(Value value, Suite suite) {
-		if(value == null){
+		if(value == null || suite == null){
 			throw new IllegalArgumentException("Argument can't be null");
 		}
 		
