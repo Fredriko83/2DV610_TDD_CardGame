@@ -16,6 +16,12 @@ public class CardTest {
 		sut = new Card(Card.Value.Seven, Card.Suite.Hearts);
 		assertEquals("Wrong value of card", Card.Value.Seven, sut.getValue());
 	}
+	
+	@Test
+	public void CardHasSuiteHearts(){
+		sut = new Card(Card.Value.Seven, Card.Suite.Hearts);
+		assertEquals("Wrong suite of card", Card.Suite.Hearts, sut.getSuite());
+	}
 		
 	@Test(expected=IllegalArgumentException.class)
 	public void nullForCardValueShouldThrowException() throws Exception {
@@ -26,4 +32,6 @@ public class CardTest {
 	public void nullForSuiteShouldThrowException() throws Exception {
 		new Card(Card.Value.Seven, null);
 	}
+	
+	
 }

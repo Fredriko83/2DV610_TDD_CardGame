@@ -26,4 +26,9 @@ public class Card {
 		return this.value;
 	}
 
+	public Object getSuite() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
