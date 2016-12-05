@@ -1,14 +1,19 @@
 package model;
 
-public class Card {
+import view.ConsoleView;
 
+public class Card {
+		
+	private String value;
+	private String suite;
+	
 	public Card(String value, String suite) {
-		// TODO Auto-generated constructor stub
+		this.value = value;
+		this.suite = suite;
 	}
 
 	public Object getValue() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.value;
 	}
 	
 }
