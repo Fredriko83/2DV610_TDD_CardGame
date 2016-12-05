@@ -1,13 +1,25 @@
 package model;
 
-import view.ConsoleView;
-
 public class Card {
+
+	public enum Value {
+		Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Knight, Queen, King, Ace
+	}
+
+	public enum Suite {
+		Hearts, Spades, Diamonds, Clubs
+	}
+
+	private int cardValue;
+
+	private Value value;
+	private Suite suite;
+
+	public Card(Value value, Suite suite) {
+		if(value == null){
+			throw new IllegalArgumentException("Shouldn't be null");
+		}
 		
-	private String value;
-	private String suite;
-	
-	public Card(String value, String suite) {
 		this.value = value;
 		this.suite = suite;
 	}
@@ -15,5 +27,5 @@ public class Card {
 	public Object getValue() {
 		return this.value;
 	}
-	
+
 }

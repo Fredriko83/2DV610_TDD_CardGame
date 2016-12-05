@@ -11,10 +11,12 @@ public class CardTest {
 	
 	@Test
 	public void CardHasValueSeven(){
-		Card card = new Card("Seven", "HEART");
-		assertEquals("Wrong value of card", "Seven", card.getValue());
+		Card card = new Card(Card.Value.Seven, Card.Suite.Hearts);
+		assertEquals("Wrong value of card", Card.Value.Seven, card.getValue());
 	}
-	
-	
-	
+		
+	@Test(expected=Exception.class)
+	public void nullForCardValueShouldThrowException() throws Exception {
+		new Card(null, Card.Suite.Hearts);
+	}	
 }
