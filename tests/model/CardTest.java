@@ -9,14 +9,16 @@ import org.junit.Assert;
 
 public class CardTest {
 	
+	Card sut = null;
+	
 	@Test
 	public void CardHasValueSeven(){
-		Card card = new Card(Card.Value.Seven, Card.Suite.Hearts);
+		sut = new Card(Card.Value.Seven, Card.Suite.Hearts);
 		assertEquals("Wrong value of card", Card.Value.Seven, card.getValue());
 	}
 		
-	@Test(expected=Exception.class)
+	@Test(expected=IllegalArgumentException.class)
 	public void nullForCardValueShouldThrowException() throws Exception {
 		new Card(null, Card.Suite.Hearts);
-	}	
+	}
 }

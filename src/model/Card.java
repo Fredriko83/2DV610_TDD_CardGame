@@ -17,7 +17,7 @@ public class Card {
 
 	public Card(Value value, Suite suite) {
 		if(value == null){
-			throw new IllegalArgumentException("Shouldn't be null");
+			throw new IllegalArgumentException("Argument can't be null");
 		}
 		
 		this.value = value;
