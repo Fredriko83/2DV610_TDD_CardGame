@@ -5,15 +5,20 @@ import java.util.ArrayList;
 public class Deck {
 	
 	ArrayList<Card> deck;
+	
+	public Deck(){
+		deck = new ArrayList<Card>();
+		for(int i = 0; i < 52; i++){
+			deck.add(new Card(Card.Value.Two, Card.Suite.Hearts));
+		}
+	}
 
-	public Card getCard() {
-		// TODO Auto-generated method stub
+	public Card getCard() {		
 		return new Card(Card.Value.Two, Card.Suite.Hearts);
 	}
 
-	public Object cardsLeft() {
-		// TODO Auto-generated method stub
-		return null;
+	public int cardsLeft() {		
+		return deck.size();
 	}
 
 }
