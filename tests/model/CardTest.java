@@ -30,5 +30,10 @@ public class CardTest {
 		new Card(Card.Value.Seven, null);
 	}
 	
+	@Test(expected=IllegalArgumentException.class)
+	public void nullForValueAndSuiteShouldThrowException() throws Exception {
+		new Card(null, null);
+	}
+	
 	
 }
