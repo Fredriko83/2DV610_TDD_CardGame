@@ -8,7 +8,7 @@ public class Deck {
 
 	public Card getCard() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Card(Card.Value.Two, Card.Suite.Hearts);
 	}
 
 }
