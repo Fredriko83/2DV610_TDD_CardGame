@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Deck {
 	
-	ArrayList<Card> deck;
+	private ArrayList<Card> deck;
 	
 	public Deck(){
 		deck = new ArrayList<Card>();
@@ -14,7 +14,7 @@ public class Deck {
 	}
 
 	public Card getCard() {		
-		return new Card(Card.Value.Two, Card.Suite.Hearts);
+		return deck.remove(0);
 	}
 
 	public int cardsLeft() {		
