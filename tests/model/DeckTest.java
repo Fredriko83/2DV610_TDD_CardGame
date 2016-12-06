@@ -26,5 +26,11 @@ public class DeckTest {
 		sut = new Deck();
 		assertEquals("New deck doesn't contain 52 cards", 52, sut.cardsLeft());
 	}
+	
+	@Test
+	public void lastCardUnshuffledDeckShouldBeAceOfClubs() {		
+		assertEquals("Last card should have value Ace", Card.Value.Ace, ( sut.getCard()).getValue());
+		assertEquals("Last card should have suite Clubs", Card.Suite.Clubs, sut.getCard().getSuite());
+	}
 
 }
