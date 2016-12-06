@@ -24,6 +24,7 @@ public class BlackJackTest {
 	public void shouldShowMenu() {
 		
 		verify(view).showMenu();
+		
 	}
 	
 	@Test

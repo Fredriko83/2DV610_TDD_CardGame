@@ -29,5 +29,10 @@ public class Card {
 	public Object getSuite() {
 		return this.suite;
 	}
+	
+	public String toString(){
+		return value + " of " + suite;
+		}
+		
 
 }
