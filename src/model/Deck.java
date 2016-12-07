@@ -4,19 +4,20 @@ import java.util.ArrayList;
 
 public class Deck {
 	
-	private ArrayList<Card> cards;
-	private Card card;
+	private ArrayList<Card> cards = new ArrayList<Card>();	
+	private CardFactory CF = new CardFactory();
 	
 	public Deck(){
-		System.out.println(card);	
-		this.cards = new ArrayList<Card>();		
+		init();
+	}
+	
+	public void init() {		
 		for (int i=0; i<13; i++){	 
 			for (int j=0; j<4; j++){
-				card = new Card(Card.Value.values()[i], Card.Suite.values()[j]);
-				this.cards.add(card);				
-			}		
+				//card = cardFactory.createCard(Card.Value.values()[i], Card.Suite.values()[j]);
+				this.cards.add(CF.createCard(Card.Value.values()[i], Card.Suite.values()[j]));			
+			}
 	    }
-		System.out.println(cards);
 	}
 
 	public Card getCard() {		
@@ -24,7 +25,7 @@ public class Deck {
 	}
 
 	public int cardsLeft() {		
-		return cards.size();
+		return cards.size();		
 	}	
 
 	public Card getLastCard() {
