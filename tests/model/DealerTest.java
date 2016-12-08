@@ -38,6 +38,7 @@ public class DealerTest {
 		
 		Player player = mock(Player.class);
 		Mockito.when(player.calcHandValue()).thenReturn(19);
+		
 		assertTrue(sut.dealerWins(player));
 	}
 }
