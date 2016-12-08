@@ -14,15 +14,11 @@ import org.mockito.Mockito;
 public class DealerTest {
 
 	
-	@Mock
-	private Deck testDeck;
-	@Mock
-	private Card card = new Card(Card.Value.Ace, Card.Suite.Clubs);
-	@Mock
-	private ArrayList<Card> m_hand = new ArrayList<Card>();
+	@Mock private Deck m_deck;
+	//@Mock private Card card = new Card(Card.Value.Ace, Card.Suite.Clubs);
+	@Mock private ArrayList<Card> m_hand;
 	
-	@InjectMocks
-	private Dealer sut;
+	@InjectMocks private Dealer sut;
 
 	@Before
 	public void setUp() throws Exception {
@@ -34,18 +30,11 @@ public class DealerTest {
 	@Test
 	public void getHandReturnsAnArrayList() {
 		assertEquals(true, sut.getHand() instanceof ArrayList);
-	}
-
-	// @Test
-	// public void checkThatDeckIsInitilized() {
-	// sut = new Dealer(testDeck);
-	// verify(testDeck, Mockito.times(1)).init();
-	// }
+	}	
 
 	@Test
 	public void addDealtCardCallsAddOnHand() {
-		sut.addDealtCard(card);
+		sut.addDealtCard(new Card(Card.Value.Ten, Card.Suite.Clubs));
 		Mockito.verify(m_hand).add(Mockito.any());
 	}
-
 }
