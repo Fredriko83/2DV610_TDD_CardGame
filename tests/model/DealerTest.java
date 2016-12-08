@@ -10,14 +10,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
 import org.mockito.Spy;
 
 public class DealerTest {
 	
-	//@Mock private Player player;
+	@Mock private Player player;
 	//@Mock private Deck m_deck;
-	//@Mock private Card card;	
+	@Mock private Card card;	
 	@Spy private ArrayList<Card> m_hand;
 	
 	@InjectMocks private Dealer sut;
@@ -28,16 +28,31 @@ public class DealerTest {
 	}
 	
 	@Test
-	public void dealerWinsWithBetterCards() {
-		Card card = mock(Card.class);
-		Mockito.when(card.getValue()).thenReturn("Ten");
+	public void dealerWinsWithHigherCards() {
+		card = mock(Card.class);
+		when(card.getValue()).thenReturn("Ten");
 		sut.addDealtCard(card);
 		card = mock(Card.class);
-		Mockito.when(card.getValue()).thenReturn("Queen");
+		when(card.getValue()).thenReturn("Queen");
 		sut.addDealtCard(card);
 		
-		Player player = mock(Player.class);
-		Mockito.when(player.calcHandValue()).thenReturn(19);
+		player = mock(Player.class);
+		when(player.calcHandValue()).thenReturn(19);
+		
+		assertTrue(sut.dealerWins(player));
+	}
+	
+	@Test
+	public void dealerWinsOverFatPlayerWhenUnder21() {
+		card = mock(Card.class);
+		when(card.getValue()).thenReturn("Ten");
+		sut.addDealtCard(card);
+		card = mock(Card.class);
+		when(card.getValue()).thenReturn("Queen");
+		sut.addDealtCard(card);
+		
+		player = mock(Player.class);
+		when(player.calcHandValue()).thenReturn(22);
 		
 		assertTrue(sut.dealerWins(player));
 	}
