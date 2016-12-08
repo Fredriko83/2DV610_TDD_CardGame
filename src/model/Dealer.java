@@ -19,4 +19,10 @@ public class Dealer {
 		m_hand.add(card);
 	}
 
+	public String calcHandValue() {
+		System.out.println(m_hand);
+		return (String) m_hand.get(0).getValue();
+		
+	}
+
 }
