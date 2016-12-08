@@ -17,6 +17,11 @@ public class BlackJack {
 
 	void run() {
 		view.showMenu();
+		
+		if(view.userQuits() == false){
+			view.showBetting();
+		}
+		
 		view.showQuit();
 	}
 

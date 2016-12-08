@@ -1,5 +1,6 @@
 package model;
 
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -48,5 +49,6 @@ public class DeckTest {
 	public void getLastCardIsCalled() {		
 		sut.getLastCard();
 		verify(cards).size();		
-	}	
+	}
+	
 }

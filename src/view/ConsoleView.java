@@ -21,4 +21,14 @@ public class ConsoleView {
 		output.println(QUIT);		
 	}
 
+	public boolean userQuits() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void showBetting() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

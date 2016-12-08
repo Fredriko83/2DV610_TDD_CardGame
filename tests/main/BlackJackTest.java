@@ -17,21 +17,30 @@ public class BlackJackTest {
 	public void setUp() throws Exception {
 		view = mock(ConsoleView.class);
 		sut = new BlackJack(view);
-		sut.run();
+		
 	}
 
 	@Test
 	public void shouldShowMenu() {
-		
+		sut.run();
 		verify(view).showMenu();
 		
 	}
 	
 	@Test
 	public void shouldShowMenuAndQuit() {
-		
+		when(view.userQuits()).thenReturn(true);
+		sut.run();
 		verify(view).showMenu();
+		verify(view, never()).showBetting();
 		verify(view).showQuit();
 	}
-
+	
+	@Test
+	public void shouldShowMenuAndBetting() {
+		when(view.userQuits()).thenReturn(false);
+		sut.run();
+		verify(view).showMenu();
+		verify(view).showBetting();		
+	}
 }
