@@ -18,11 +18,11 @@ import view.ConsoleView;
 public class DealerTest {
 
 	
-	@Spy private Deck m_deck;
+	@Mock private Deck m_deck;
 	@Mock private Card card;
 	//@Mock private Card card2;
 	//@Mock private Card card3;
-	@Mock private ArrayList<Card> m_hand;
+	@Spy private ArrayList<Card> m_hand;
 	
 	
 	@InjectMocks private Dealer sut;
