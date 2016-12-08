@@ -3,14 +3,14 @@ package model;
 import java.util.ArrayList;
 
 public class Dealer {
+	private ArrayList<Card> hand;
 
 	public Dealer(Deck deck) {
-		// TODO Auto-generated constructor stub
+		hand = new ArrayList<Card>();
 	}
 
-	public ArrayList getHand() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Card> getHand() {
+		return hand;
 	}
 
 }
