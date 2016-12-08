@@ -19,9 +19,7 @@ public class DealerTest {
 
 	
 	@Mock private Deck m_deck;
-	@Mock private Card card;
-	//@Mock private Card card2;
-	//@Mock private Card card3;
+	@Mock private Card card;	
 	@Spy private ArrayList<Card> m_hand;
 	
 	
@@ -45,12 +43,49 @@ public class DealerTest {
 	}
 		
 	@Test
-	public void sumUpCards() {		
+	public void returnOneCardValue() {		
 		Card card2 = mock(Card.class);
 		Mockito.when(card2.getValue()).thenReturn("Two");
 		Mockito.when(card2.getSuite()).thenReturn("Suite");
 		sut.addDealtCard(card2);
 		System.out.println(sut.calcHandValue());
-		assertEquals("Doesn't return right score", "Two", sut.calcHandValue());
+		assertEquals("Doesn't return right score", 2, sut.calcHandValue());
+	}
+	
+	@Test
+	public void sumUpTwoCardValues() {		
+		Card card2 = mock(Card.class);
+		Mockito.when(card2.getValue()).thenReturn("Two");
+		Card card3 = mock(Card.class);
+		Mockito.when(card3.getValue()).thenReturn("Knight");
+		
+		//Mockito.when(card2.getSuite()).thenReturn("Suite");
+		sut.addDealtCard(card2);
+		sut.addDealtCard(card3);
+		System.out.println(sut.calcHandValue());
+		assertEquals("Doesn't return right score", 12, sut.calcHandValue());
+	}
+	
+	@Test
+	public void sumUpTwoCardValues2() {		
+		Card card2 = mock(Card.class);
+		Mockito.when(card2.getValue()).thenReturn("Two");
+		Card card3 = mock(Card.class);
+		Mockito.when(card3.getValue()).thenReturn("Knight");		
+		
+		sut.addDealtCard(card2);
+		sut.addDealtCard(card3);
+		System.out.println(sut.calcHandValue());
+		assertEquals("Doesn't return right score", 12, sut.calcHandValue());
+	}
+	
+	@Test
+	public void sumUpOneCardOfEachValue() {		
+		for (int i=0; i<13; i++){	 
+			card = mock(Card.class);
+			Mockito.when(card.getValue()).thenReturn(Card.Value.values()[i].toString());
+			sut.addDealtCard(card);
+			}
+		assertEquals("Doesn't return right score", 85 , sut.calcHandValue());
 	}
 }
