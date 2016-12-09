@@ -10,5 +10,5 @@ import view.ConsoleViewTest;
 
 
 	@RunWith(Suite.class)
-	@SuiteClasses({CardTest.class,DeckTest.class,PlayerTest.class,BlackJackTest.class,ConsoleViewTest.class})
+	@SuiteClasses({CardTest.class,DeckTest.class,PlayerTest.class,BlackJackTest.class,ConsoleViewTest.class,DealerTest.class})
 	public class RunAllTests {}
