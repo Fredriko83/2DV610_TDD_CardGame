@@ -4,6 +4,7 @@ import static org.mockito.Mockito.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import view.ConsoleView;
 import main.BlackJack;
@@ -16,7 +17,7 @@ public class BlackJackTest {
 	@Before
 	public void setUp() throws Exception {
 		view = mock(ConsoleView.class);
-		sut = new BlackJack(view);
+		sut = new BlackJack(view, null, null);
 		
 	}
 
@@ -31,16 +32,16 @@ public class BlackJackTest {
 	public void shouldShowMenuAndQuit() {
 		when(view.userQuits()).thenReturn(true);
 		sut.run();
-		verify(view).showMenu();
-		verify(view, never()).showBetting();
+		verify(view).showMenu();		
 		verify(view).showQuit();
 	}
 	
 	@Test
-	public void shouldShowMenuAndBetting() {
+	public void shouldShowMenuAndFirstDeal() {
 		when(view.userQuits()).thenReturn(false);
 		sut.run();
 		verify(view).showMenu();
-		verify(view).showBetting();		
+		//verify(view).showFirstDeal(Mockito.any(),Mockito.any());
+			
 	}
 }

@@ -24,7 +24,7 @@ public class Player {
 		int totalValue = 0;
 		int value;
 		for (int i = 0; i < m_hand.size(); i++) {
-			switch ((String) m_hand.get(i).getValue()) {
+			switch ((String) m_hand.get(i).getValue().toString()) {
 			case "Ace":
 				value = 1;
 				break;
@@ -60,6 +60,10 @@ public class Player {
 			totalValue += value;
 		}
 		return totalValue;
+	}
+
+	public void emptyHand() {
+		m_hand = new ArrayList<Card>();		
 	}
 
 }
