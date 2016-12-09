@@ -56,4 +56,19 @@ public class DealerTest {
 		
 		assertTrue(sut.dealerWins(player));
 	}
+	
+	@Test
+	public void pushOnSameScore() {
+		card = mock(Card.class);
+		when(card.getValue()).thenReturn("Ten");
+		sut.addDealtCard(card);
+		card = mock(Card.class);
+		when(card.getValue()).thenReturn("Queen");
+		sut.addDealtCard(card);
+		
+		player = mock(Player.class);
+		when(player.calcHandValue()).thenReturn(20);
+		
+		assertTrue(sut.dealerWins(player));
+	}
 }
