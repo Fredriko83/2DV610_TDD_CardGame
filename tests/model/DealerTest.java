@@ -39,7 +39,7 @@ public class DealerTest {
 		player = mock(Player.class);
 		when(player.calcHandValue()).thenReturn(19);
 		
-		assertTrue(sut.dealerWins(player));
+		assertEquals("Wrong Winner", "Dealer", sut.dealerWins(player));
 	}
 	
 	@Test
@@ -54,7 +54,7 @@ public class DealerTest {
 		player = mock(Player.class);
 		when(player.calcHandValue()).thenReturn(22);
 		
-		assertTrue(sut.dealerWins(player));
+		assertEquals("Wrong Winner", "Dealer", sut.dealerWins(player));
 	}
 	
 	@Test
@@ -69,6 +69,6 @@ public class DealerTest {
 		player = mock(Player.class);
 		when(player.calcHandValue()).thenReturn(20);
 		
-		assertTrue(sut.dealerWins(player));
+		assertEquals("Wrong Winner", "Push", sut.dealerWins(player));
 	}
 }
