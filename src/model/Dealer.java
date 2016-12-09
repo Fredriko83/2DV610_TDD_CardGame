@@ -33,22 +33,12 @@ public class Dealer extends Player {
 		player.addDealtCard(deck.getCard());	
 	}
 
-	private void init(Player player) {
-		player.emptyHand();
-		this.emptyHand();
-		deck = new Deck();
-		
-	}
-
 	public void play(Player player) {
 		int playerScore = player.calcHandValue();
 		this.addDealtCard(deck.getCard());
 		while(playerScore <= 21 && this.calcHandValue() < playerScore){
 			this.addDealtCard(deck.getCard());
-		}
-
-
-		
+		}		
 	}
 	
 	public void resetGame(Player player) {

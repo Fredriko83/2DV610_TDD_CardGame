@@ -74,6 +74,12 @@ public class DealerTest {
 		assertEquals("Wrong Winner", "Push", sut.dealerWins(player));
 	}
 	
+	//private void init(Player player) {
+	//	player.emptyHand();
+	//	this.emptyHand();
+	//	deck = new Deck();
+		
+	//}
 	@Test
 	public void playerWinsOnBetterCards() {
 		card = mock(Card.class);

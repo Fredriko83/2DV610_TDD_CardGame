@@ -2,13 +2,17 @@ package main;
 
 
 	import org.junit.runner.RunWith;
-	import org.junit.runners.Suite;
-	import org.junit.runners.Suite.SuiteClasses;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
 
-import model.*;
-import view.ConsoleViewTest;
+import model.CardTest;
+import model.DealerTest;
+import model.DeckTest;
+import model.PlayerTest;
 
 
 	@RunWith(Suite.class)
-	@SuiteClasses({CardTest.class,DeckTest.class,PlayerTest.class,BlackJackTest.class,ConsoleViewTest.class,DealerTest.class})
+	@SuiteClasses({CardTest.class,DeckTest.class,PlayerTest.class,DealerTest.class})
 	public class RunAllTests {}
+
+	//,BlackJackTest.class,ConsoleViewTest.class
