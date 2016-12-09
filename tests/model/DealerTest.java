@@ -110,8 +110,6 @@ public class DealerTest {
 	@Test
 	public void startGameDealsThreeCards() {
 		sut.startGame(player);
-		//card = mock(Card.class);
-		//Mockito.when(deck.getCard()).thenReturn(card);
 		Mockito.verify(m_hand, Mockito.times(1)).add(Mockito.any());
 		Mockito.verify(player, Mockito.times(2)).addDealtCard(Mockito.any());
 	}

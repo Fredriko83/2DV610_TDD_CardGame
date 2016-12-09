@@ -7,10 +7,6 @@ public class Dealer extends Player {
 	private Deck deck;
 	String winner;
 	
-	//public Dealer(){
-	//	deck = new Deck();		
-	//}
-
 	public String dealerWins(Player player) {
 		if (this.calcHandValue() == player.calcHandValue()) {
 			winner = "Push";
@@ -30,7 +26,6 @@ public class Dealer extends Player {
 		deck = new Deck();		
 		this.addDealtCard(deck.getCard());
 		player.addDealtCard(deck.getCard());
-		player.addDealtCard(deck.getCard());
-		
+		player.addDealtCard(deck.getCard());	
 	}
 }
