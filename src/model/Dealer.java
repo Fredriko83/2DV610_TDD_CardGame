@@ -4,7 +4,12 @@ import java.util.ArrayList;
 
 public class Dealer extends Player {
 
+	private Deck deck;
 	String winner;
+	
+	//public Dealer(){
+	//	deck = new Deck();		
+	//}
 
 	public String dealerWins(Player player) {
 		if (this.calcHandValue() == player.calcHandValue()) {
@@ -19,5 +24,13 @@ public class Dealer extends Player {
 			winner = "Player";
 		}
 		return winner;
+	}
+
+	public void startGame(Player player) {
+		deck = new Deck();		
+		this.addDealtCard(deck.getCard());
+		player.addDealtCard(deck.getCard());
+		player.addDealtCard(deck.getCard());
+		
 	}
 }
